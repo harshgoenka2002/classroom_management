@@ -1,0 +1,44 @@
+
+
+
+.class_image{
+
+    height: auto;
+   
+    width: fit-content;
+    border-radius: 5px;
+    box-shadow: 10px 5px 5px rgb(83, 76, 76);
+    padding: 30px;
+    margin:  auto;
+    background-color: #ddd;
+ 
+}
+.class_image img{
+    height: 65vh;
+    width: 70vw;
+}
+
+.timetable_content{
+   height: 5vh;
+   width: 100%;
+   margin-left: 15%;
+   margin-top: 20px;
+ 
+}
+.timetable_content label{
+
+   font-family: 'Baloo Bhai 2', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+    font-weight: bold;
+}
+.timetable_content select{
+    border-radius: 20px;
+    width: 65%;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+.timetable_content select option{
+    font-size: larger;
+    font-weight: bold;
+}

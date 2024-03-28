@@ -1,0 +1,91 @@
+  /* attendance */
+  .attendance_content {
+   
+    height: 100%;
+    width: 100vw;
+    font-family: 'Baloo Bhai 2', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+    font-weight: bold;
+    background-color: #ddd;
+
+}
+  
+  .container {
+    background-color: white;
+    box-shadow: 10px 5px 5px rgb(83, 76, 76);
+    border-radius: 5px;
+    padding: 30px;
+    max-width: 900px;
+    margin:  auto;
+    margin-top: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  select, input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+
+  #attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  #attendance-table th, #attendance-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  #attendance-table td{
+       font-weight: normal;
+  }
+
+  #total {
+    margin-top: 20px;
+  }
+
+  #share-options button{
+    margin-top: 20px;
+    margin-left: 40%;
+    font-size: 20px;
+    font-family: 'Baloo Bhai 2', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px;
+    border-radius:20px ;
+    background-color: #ddd;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+  }
+
+  /* .container{
+    border-radius: 20px;
+    border: 10px solid rgb(138, 110, 110);
+    padding: 10px;
+   
+  } */
+  .attendance_content select{
+    border-radius: 20px;
+    
+  }
+  .attendance_content .container select option{
+    font-size: larger;
+    font-weight: bold;
+  }
+
+  .attendance-checkbox{
+    height: 25px;
+    width: 25px;
+  }
+
+  #total-attendance, #out-of{
+
+ font-size: larger;
+    font-weight: bold;
+  }

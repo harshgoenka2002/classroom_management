@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@800&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/attendance.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="nav_bar">
+    <a href="/" class="lin">
+      <div class=" nav ">Home</div>
+    </a>
+    <a href="/attendance" class="lin">
+      <div class="attendance nav ">Attendance</div>
+    </a>
+    <a href="/courses-and-materials" class="lin">
+      <div class="courses nav ">Courses & Materials</div>
+    </a>
+    <a href="/circular" class="lin" >
+      <div class="circulars nav ">Circulars</div>
+    </a>
+    <a href="/time-table" class="lin" >
+      <div class="timetable nav ">Time Table</div>
+    </a>
+    <a href="/event-calendar" class="lin">
+      <div class="eventcalendars nav "> Event Calendar 
+       </div>
+    </a>
+  </div>
+
+    <div class="main_conainer">
+
+      <div class="attendance_content  " id="att">
+          <div class="container">
+               
+            <label for="branch">Select Department:</label>
+            <select id="branch">
+              <% dep.forEach(dept => { %>
+                <option value="<%= dept._id %>"><%= dept.department %></option>
+              <% }); %>
+            </select>
+        
+            <label for="class">Select Class:</label>
+            <select id="class">
+              <option value="select" selected>Select</option>
+              <% brnch.forEach(branch=>{ %>
+              <option value="<%=branch._id%>"><%= branch.branch %></option>
+              <%});%>
+
+              <!-- Add more options as needed -->
+            </select>
+            
+            <label for="subject">Select Subject:</label>
+            <select id="subject">
+              <option value="select" selected>Select</option>
+              <%sub.forEach(subject=>{ %>
+              <option value="<%=subject._id%>"><%=subject.subject%></option>
+              <%})%>
+            </select>
+        
+            <label for="faculty">Select Faculty:</label>
+            <select id="faculty">
+              <option value="select" selected>Select</option>
+              <%fac.forEach(teacher=>{ %>
+              <option value="<%=teacher._id%>"><%=teacher.name%></option>
+              <%})%>
+              <!-- Add more options as needed -->
+            </select>
+            
+            <label for="attendance">Attendance:</label>
+            <table id="attendance-table">
+              <thead>
+                <tr>
+                  <th>Roll No</th>
+                  <th>Name</th>
+                  <th>Present</th>
+                </tr>
+              </thead>
+              <tbody>
+         
+                
+                <!-- Add more rows as needed -->
+              </tbody>
+            </table>
+        
+            <div id="total">
+              <label >Total:</label>
+              <input type="text" id="total-attendance" style="border-radius: 10px;width: 15%;" readonly>
+              <b>/</b>
+              <input type="text" id="out-of" style="border-radius: 10px;width: 15%;" readonly>
+            </div>
+            
+            <div id="share-options">
+              <button id="generate-report-button">Generate Report</button>
+            </div>
+      
+          </div>
+        </div>
+        
+        <script>
+          // Access the stu variable passed from the server-side
+          const stuData = <%- JSON.stringify(stu) %>;
+        </script>
+        <script type="module" src="/javascripts/script.js"></script>
+        
+      
+       
+</body>
+</html>

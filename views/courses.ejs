@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/courses.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/attendance.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+</head>
+<body>
+  <div class="nav_bar">
+    <a href="/" class="lin">
+      <div class=" nav ">Home</div>
+    </a>
+    <a href="/attendance" class="lin">
+      <div class="attendance nav ">Attendance</div>
+    </a>
+    <a href="/courses-and-materials" class="lin">
+      <div class="courses nav ">Courses & Materials</div>
+    </a>
+    <a href="/circular" class="lin" >
+      <div class="circulars nav ">Circulars</div>
+    </a>
+    <a href="/time-table" class="lin" >
+      <div class="timetable nav ">Time Table</div>
+    </a>
+    <a href="/event-calendar" class="lin">
+      <div class="eventcalendars nav "> Event Calendar 
+       </div>
+    </a>
+  </div>
+  <form action="/upload" method="post" enctype="multipart/form-data" target="_blank">
+    <div class="courses_content " id="cam">
+        <div class="courses_container">
+  
+          <div class="msubject">
+            <label for="subject">Select Subject:</label>
+            <select id="subject" name="subject"> <!-- Added name attribute -->
+              <option value="select" selected>Select</option>
+              <% sub.forEach(subject => { %>
+              <option value="<%= subject._id %>" ><%= subject.subject %></option>
+              <% }) %>
+            </select>
+          </div>
+          
+          <div class="mcheck_type">
+            <label for="mcheck1">Syllabus</label>
+            <input type="checkbox" id="mcheck1" name="syllabus"> <!-- Added name attribute -->
+            <label for="mcheck2">Previous Year</label>
+            <input type="checkbox" id="mcheck2" name="previous_year"> <!-- Added name attribute -->
+            <label for="mcheck3">Materials</label>
+            <input type="checkbox" id="mcheck3" name="materials"> <!-- Added name attribute -->
+          </div>
+  
+          <div class="pdf_container" id="pdf_container">
+            PDFS
+          </div>
+  
+          <div class="mbuttons">
+           
+  <div>
+    <input type="file" style="color:transparent"  onchange="this.style.color = 'black'" name="pdf" id="fileInput" class="custom-file-input">
+  </div>
+     
+      <div id="share-options">
+        <input type="submit" value="UPLOAD" id="generate-report-button">
+      </div>
+          </div>
+  
+        </div>
+      </div>
+    </form>
+    
+    <script src="/javascripts/courses.js"></script>
+</body>
+</html>

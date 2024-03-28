@@ -1,0 +1,39 @@
+.calendar {
+    display: table;
+    width: 60%;
+    margin: auto;
+    border-collapse: collapse;
+  }
+
+  .calendar-header, .calendar-row {
+    display: table-row;
+  }
+
+  .calendar-header {
+    background-color: grey;
+  }
+
+  .calendar-cell {
+    display: table-cell;
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+  }
+
+  .date {
+    margin-bottom: 5px;
+  }
+
+  .event {
+    background-color: rgb(196, 70, 70);
+    color: #000000;
+  }
+
+  .event-name {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }

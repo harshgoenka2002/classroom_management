@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/circulars.css">
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <% include nav.ejs %>
+    <div class="circulars_content" id="cc">
+        <div class="circular_container">
+          <div class="cselect">
+  
+            <label for="cbranch">Select Department:</label>
+            <select id="cbranch">
+              <option value="all" selected>Select</option>
+              <option value="ALL DEPARTMENTS" >ALL DEPARTMENTS</option>
+              <option value="Information Technology and Computer Applications">Information Technology and Computer Applications</option>
+              <option value="Computer Science and Systems Engineering">Computer Science and Systems Engineering</option>
+              <option value="MECHANICAL Engineering">MECHANICAL Engineering</option>
+              <option value="CIVIL Engineering">CIVIL Engineering</option>
+              <option value="CHEMICAL Engineering">CHEMICAL Engineering</option>
+            </select>
+          </div>
+  
+          <div class="ctextarea">
+            <textarea name="circular" id="csubject" cols="111" rows="2" placeholder="Subject"></textarea>
+          </div>
+          <div class="ctextarea">
+            <textarea name="circular" id="ctext" cols="111" rows="50" placeholder="CIRCULAR"></textarea>
+          </div>
+  
+          <div class="cbutton" id="sendButton">
+            <button>Create</button>
+          </div>
+  
+        </div>
+      </div>
+
+    
+    <script>
+      document.getElementById('sendButton').addEventListener('click', function() {
+        // Get selected department
+        var department = document.getElementById('cbranch').value;
+
+        // Get subject of the circular
+        var subject = document.getElementById('csubject').value;
+        var txt = document.getElementById('ctext').value;
+
+        // Get current date
+        var currentDate = new Date().toLocaleDateString();
+
+        // Create PDF
+        const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+     
+      doc.setFontSize(18).setFont(undefined, 'bold');
+      doc.text("CIRCULAR" ,75,10)
+      doc.setFontSize(15).setFont(undefined, 'normal');
+     
+        doc.text('Department: ' + department, 10, 30);
+        doc.text('Date: ' + currentDate, 150, 20);
+        doc.text('Subject: ' + subject, 10, 40);
+        doc.text(  txt, 10, 50);
+        // doc.save('circular.pdf');
+
+        const blob = doc.output("blob");
+      const blobURL = URL.createObjectURL(blob);
+      window.open(blobURL, "_blank");
+      });
+    </script>
+</body>
+</html>

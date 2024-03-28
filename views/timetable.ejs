@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/timetable.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <% include nav.ejs%>
+    <div class="timetable_content">
+      <label for="classSelect">Select Class:</label>
+      <select id="classSelect" onchange="changeImage()">
+        <option value="onebyfourIT">B.TECH 1/4 IT</option>
+        <option value="twobyfourIT">B.TECH 2/4 IT</option>
+        <option value="threebyfourIT">B.TECH 3/4 IT</option>
+        <option value="fourbyfourIT">B.TECH 4/4 IT</option>
+        <option value="onebytwoMSC">MSC 1/2 IT</option>
+        <option value="onebyoneMCA">MCA 1/1 IT</option>
+        <!-- Add more class options as needed -->
+      </select>
+    </div>
+  
+      <div class="class_image">
+        <!-- Initial image, to be replaced by JavaScript -->
+        <img id="classImage" src="/images/fourbyfourIT.jpeg" alt="Class Image">
+      </div>  
+
+  <script src="/javascripts/timetable.js"></script>
+
+
+
+      
+      <script src=""></script>
+</body>
+</html>
